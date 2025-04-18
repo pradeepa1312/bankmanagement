@@ -1,0 +1,26 @@
+create database bankmanagementsystem;
+use bankmanagementsystem;
+create table signup(formno varchar(20), name varchar(20), father_name varchar(20), dob varchar(20), gender varchar(20),email varchar(30), marital_status varchar(20), address varchar(40), city varchar(25), pincode varchar(20), state varchar(25));
+
+create table signuptwo(formno varchar(20), religion varchar(20), category varchar(20), income varchar(20), education varchar(20), occupation varchar(20), pan varchar(20), aadhar varchar(20), seniorcitizen varchar(20), existingaccount varchar(20));
+create table signupthree(formno varchar(20), accountType varchar(40), cardnumber varchar(25), pin varchar(10), facility varchar(100)); 
+
+create table login(formno varchar(20), cardnumber varchar(25), pin varchar(10));
+create table bank(pin varchar(10), date varchar(50), type varchar(20), amount varchar(20));
+
+SHOW TABLES;
+SELECT * FROM signuptwo;
+INSERT INTO signup (formno, name, father_name, dob, gender, email, marital_status, address, city, pincode, state)
+VALUES ('F123', 'John Doe', 'Robert Doe', '1990-05-01', 'Male', 'john.doe@example.com', 'Single', '123 Main St', 'New York', '10001', 'New York');
+INSERT INTO signuptwo (formno, religion, category, income, education, occupation, pan, aadhar, seniorcitizen, existingaccount)
+VALUES ('F123', 'Christianity', 'General', '50000', 'Bachelor', 'Software Engineer', 'ABCDE1234F', '123456789012', 'No', 'Yes');
+INSERT INTO signupthree (formno, accountType, cardnumber, pin, facility)
+VALUES ('F123', 'Savings', '1234-5678-9101-1121', '1234', 'ATM, Online Banking');
+INSERT INTO login (formno, cardnumber, pin)
+VALUES ('F123', '1234-5678-9101-1121', '1234');
+INSERT INTO bank (pin, date, type, amount)
+VALUES ('1234', '2025-04-16', 'Deposit', '1000');
+RENAME TABLE signuptwo TO signup2;
+RENAME TABLE signup 3 TO signup3;
+DESCRIBE bank;
+ALTER TABLE bank CHANGE type mode VARCHAR(20);
